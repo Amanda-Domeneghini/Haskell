@@ -1,0 +1,55 @@
+--desenvolva uma nova versao do tail que verifica se a lista 
+--eh vazia para nao gerar erro
+-- letra A: use o if
+{-safetailA :: [a] -> [a]
+safetailA xs = if null xs then [] else tail xs
+--letra B: use guarda
+safetailB :: [a] -> [a]
+safetailB xs  |null xs    = []
+	      |otherwise  = tail xs
+	      -}
+--letra C: usando casamento de padroes
+safetailC :: [a] -> [a]
+safetailC [] = [] 
+safetailC (_:xs) = xs 
+
+--Exercicio 2 - casamento de padroes com OR
+or1 :: Bool -> Bool -> Bool
+or1 False False = False
+or1 False True = True 
+or1 True False = True
+or1 True True = True
+
+or2 :: Bool -> Bool -> Bool 
+or2 False False = False
+or2 _ _ = True
+
+or3 :: Bool -> Bool -> Bool 
+or3 False b = b
+or3 True _ = True
+
+or4 :: Bool -> Bool -> Bool 
+or4 a b | a == b = a
+or4 _ _ 	 = True
+
+--Exercicio 3 
+and2 :: Bool -> Bool -> Bool 
+and2 a b = if a && b
+	   then True
+	   else False
+
+--Exercicio4
+and3 :: Bool -> Bool -> Bool 
+and3 a b = if a then b else False
+
+
+
+
+
+
+
+
+
+
+
+
